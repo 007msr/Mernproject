@@ -11,7 +11,7 @@ require("../db/conn");
 app.use(require("../router/auth"));
 const User=require("../models/userschema");
 //const user=require("../models/userschema");
-const port =5000 || process.env.PORT;
+const port = process.env.PORT || 5000 ;
 
 if(process.env.NODE_ENV== "production")
 {
