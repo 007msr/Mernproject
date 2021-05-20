@@ -6,7 +6,7 @@ const cookieParser = require('cookie-parser');
 app.use(express.json());
 app.use(cookieParser());
 
-//dotenv.config({path:'./config.env'});
+dotenv.config({path:'./config.env'});
 require("../db/conn");
 app.use(require("../router/auth"));
 const User=require("../models/userschema");

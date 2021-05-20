@@ -3,7 +3,7 @@ const user=require("../models/userschema");
 const authenticate=async(req,res,next)=>{
     try{
         const token=req.cookies.jwtoken;
-        const verifyToken= jwt.verify(token,`${process.env.SECRET_KEY}`);
+        const verifyToken= jwt.verify(token,process.env.SECRET_KEY);
         const rootuser= await user.findOne({_id:verifyToken._id,"tokens.token":token});
        //console.log("chal rha hai");
         if(!rootuser)
